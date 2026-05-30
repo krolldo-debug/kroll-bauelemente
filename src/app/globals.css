@@ -1,17 +1,166 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+/* ─── Design Tokens ─────────────────────────────────────────────────── */
+:root {
+  --black:       #0F0D0A;
+  --gold:        #B8965A;
+  --gold-light:  #D4AE78;
+  --stone:       #F4F1EC;
+  --stone-mid:   #EDE8DF;
+  --stone-dark:  #E0D9CE;
+  --warm-grey:   #7A7670;
+  --text-muted:  #9A9590;
+  --border:      #DDD8CF;
+  --font-display: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-body:    var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
 }
 
+/* ─── Base ───────────────────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--stone);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Font Utilities ─────────────────────────────────────────────────── */
+.font-display { font-family: var(--font-display); }
+
+/* ─── Grain Texture ──────────────────────────────────────────────────── */
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+}
+
+/* ─── Hero Animations ────────────────────────────────────────────────── */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(32px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.fade-up { animation: fadeUp 0.7s ease-out forwards; }
-.delay-1 { animation-delay: 0.12s; opacity: 0; }
-.delay-2 { animation-delay: 0.24s; opacity: 0; }
-.delay-3 { animation-delay: 0.36s; opacity: 0; }
-.delay-4 { animation-delay: 0.48s; opacity: 0; }
-.delay-5 { animation-delay: 0.60s; opacity: 0; }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes lineGrowX {
+  from { transform: scaleX(0); transform-origin: left; }
+  to   { transform: scaleX(1); transform-origin: left; }
+}
+
+@keyframes lineGrowY {
+  0%   { transform: scaleY(0); opacity: 1; transform-origin: top; }
+  45%  { transform: scaleY(1); opacity: 1; transform-origin: top; }
+  55%  { transform: scaleY(1); opacity: 1; transform-origin: bottom; }
+  100% { transform: scaleY(0); opacity: 1; transform-origin: bottom; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.fade-up {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+  opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.18s; }
+.delay-2 { animation-delay: 0.36s; }
+.delay-3 { animation-delay: 0.54s; }
+.delay-4 { animation-delay: 0.72s; }
+.delay-5 { animation-delay: 0.90s; }
+
+.line-grow-x {
+  animation: lineGrowX 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.scroll-line {
+  animation: lineGrowY 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ─── Marquee ────────────────────────────────────────────────────────── */
+.marquee-track { animation: marquee 32s linear infinite; }
+
+/* ─── Gold Underline Link ────────────────────────────────────────────── */
+.gold-link {
+  position: relative;
+  display: inline-block;
+}
+.gold-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gold-link:hover::after { width: 100%; }
+
+/* ─── Service Row Hover ──────────────────────────────────────────────── */
+.service-row {
+  position: relative;
+  transition: background 0.4s ease;
+}
+.service-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: var(--gold);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-row:hover::before { width: 2px; }
+
+/* ─── Image Frame ────────────────────────────────────────────────────── */
+.frame-accent {
+  position: relative;
+}
+.frame-accent::before {
+  content: '';
+  position: absolute;
+  inset: -12px -12px 12px 12px;
+  border: 1px solid var(--gold);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Form Field Focus ───────────────────────────────────────────────── */
+.field-input {
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 0.75rem 0;
+  font-size: 0.9375rem;
+  color: var(--black);
+  font-family: var(--font-body);
+}
+.field-input::placeholder { color: var(--text-muted); }
+.field-input:focus { border-color: var(--gold); }
+
+.field-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.25rem;
+}

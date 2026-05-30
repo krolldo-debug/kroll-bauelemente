@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Leistungen", href: "#leistungen" },
-  { label: "Über uns", href: "#ueber-uns" },
+  { label: "Über uns",   href: "#ueber-uns" },
   { label: "Referenzen", href: "#referenzen" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Kontakt",    href: "#kontakt" },
 ];
 
 export default function Header() {
@@ -15,86 +15,98 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", fn);
+    const fn = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-[#E6E4DF] shadow-sm"
+          ? "bg-[#F4F1EC]/96 backdrop-blur-md border-b border-[#DDD8CF]"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex items-center justify-between h-[62px] lg:h-[70px]">
+
+          {/* Logo mark */}
+          <a href="#" className="flex items-center gap-3 group">
+            {/* Monogram */}
             <div
-              className={`text-base font-bold tracking-tight transition-colors duration-300 ${
-                scrolled ? "text-[#121210]" : "text-white"
+              className={`w-8 h-8 border flex items-center justify-center flex-shrink-0 transition-colors duration-500 ${
+                scrolled
+                  ? "border-[#B8965A]/60 text-[#B8965A]"
+                  : "border-[#B8965A]/50 text-[#B8965A]"
               }`}
             >
-              Kroll &amp; Kroll
+              <span className="font-display text-sm font-semibold leading-none">K</span>
             </div>
-            <span
-              className={`text-xs transition-colors duration-300 ${
-                scrolled ? "text-[#9B9995]" : "text-white/60"
-              }`}
-            >
-              Bauelemente
-            </span>
+            <div className="leading-none">
+              <div
+                className={`text-[13px] font-semibold tracking-[0.12em] uppercase transition-colors duration-500 ${
+                  scrolled ? "text-[#0F0D0A]" : "text-white"
+                }`}
+              >
+                Kroll &amp; Kroll
+              </div>
+              <div
+                className={`text-[9px] tracking-[0.22em] uppercase mt-0.5 transition-colors duration-500 ${
+                  scrolled ? "text-[#9A9590]" : "text-white/40"
+                }`}
+              >
+                Bauelemente
+              </div>
+            </div>
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-9">
             {navLinks.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className={`text-sm font-medium transition-colors duration-300 relative group ${
+                className={`gold-link text-[12.5px] font-medium tracking-[0.06em] transition-colors duration-400 ${
                   scrolled
-                    ? "text-[#3A3935] hover:text-[#121210]"
-                    : "text-white/80 hover:text-white"
+                    ? "text-[#4A4845] hover:text-[#0F0D0A]"
+                    : "text-white/65 hover:text-white"
                 }`}
               >
                 {l.label}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-current group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </nav>
 
           {/* CTA */}
-          <div className="hidden lg:flex items-center gap-5">
+          <div className="hidden lg:flex items-center gap-6">
             <a
               href="tel:+493329614673"
-              className={`flex items-center gap-1.5 text-sm transition-colors duration-300 ${
-                scrolled ? "text-[#6B6A68] hover:text-[#121210]" : "text-white/70 hover:text-white"
+              className={`text-[12px] tracking-[0.04em] transition-colors duration-400 ${
+                scrolled ? "text-[#7A7670] hover:text-[#0F0D0A]" : "text-white/45 hover:text-white"
               }`}
             >
-              <Phone size={13} />
               03329 614673
             </a>
             <a
               href="#kontakt"
-              className={`text-sm font-semibold px-5 py-2 rounded-full border transition-all duration-300 ${
+              className={`text-[12px] font-semibold px-5 py-2.5 tracking-[0.08em] uppercase border transition-all duration-400 ${
                 scrolled
-                  ? "border-[#121210] text-[#121210] hover:bg-[#121210] hover:text-white"
-                  : "border-white text-white hover:bg-white hover:text-[#121210]"
+                  ? "border-[#B8965A] text-[#B8965A] hover:bg-[#B8965A] hover:text-white"
+                  : "border-white/30 text-white hover:border-[#B8965A] hover:text-[#B8965A]"
               }`}
             >
-              Beratung anfragen
+              Beratung
             </a>
           </div>
 
-          {/* Mobile */}
+          {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
             className={`lg:hidden p-1.5 transition-colors ${
-              scrolled ? "text-[#121210]" : "text-white"
+              scrolled ? "text-[#0F0D0A]" : "text-white"
             }`}
+            aria-label="Menü"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -103,32 +115,33 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-white border-t border-[#E6E4DF]">
-          <div className="px-6 py-5 flex flex-col gap-1">
+        <div className="lg:hidden bg-[#F4F1EC] border-t border-[#DDD8CF]">
+          <div className="px-6 py-6 flex flex-col gap-0.5">
             {navLinks.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium text-[#3A3935] hover:text-[#121210] py-3 border-b border-[#F0EFEb] last:border-0"
+                className="text-[13px] font-medium text-[#4A4845] hover:text-[#B8965A] py-3.5 border-b border-[#E8E3DA] last:border-0 tracking-[0.04em] transition-colors"
               >
                 {l.label}
               </a>
             ))}
-            <a
-              href="tel:+493329614673"
-              className="mt-4 flex items-center gap-2 text-sm text-[#6B6A68]"
-            >
-              <Phone size={13} />
-              03329 614673
-            </a>
-            <a
-              href="#kontakt"
-              onClick={() => setOpen(false)}
-              className="mt-2 bg-[#121210] text-white text-sm font-semibold px-5 py-3 rounded-xl text-center"
-            >
-              Beratung anfragen
-            </a>
+            <div className="pt-5 flex flex-col gap-3">
+              <a
+                href="tel:+493329614673"
+                className="text-sm text-[#7A7670] tracking-wide"
+              >
+                03329 614673
+              </a>
+              <a
+                href="#kontakt"
+                onClick={() => setOpen(false)}
+                className="bg-[#B8965A] text-white text-[12px] font-semibold px-5 py-3.5 text-center tracking-[0.1em] uppercase"
+              >
+                Beratung anfragen
+              </a>
+            </div>
           </div>
         </div>
       )}
