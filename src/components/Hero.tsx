@@ -27,8 +27,9 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full pt-28 lg:pt-32">
           <div className="flex items-center gap-5">
             <div className="h-px bg-[#B8965A] w-10 line-grow-x" />
-            <span className="fade-in delay-1 text-[#B8965A] text-[10px] tracking-[0.28em] uppercase font-medium">
-              Seit 1992 · Stahnsdorf bei Potsdam
+            <span className="fade-in delay-1 text-[#B8965A] text-[10px] tracking-[0.22em] uppercase font-medium whitespace-nowrap">
+              <span className="sm:hidden">Seit 1992 · Stahnsdorf</span>
+              <span className="hidden sm:inline">Seit 1992 · Stahnsdorf bei Potsdam</span>
             </span>
           </div>
         </div>
@@ -53,8 +54,8 @@ export default function Hero() {
 
             {/* Sub-content grid */}
             <div className="fade-up delay-4 grid sm:grid-cols-2 gap-8 lg:gap-16 items-end max-w-3xl">
-              <p className="text-white/45 text-sm leading-[1.9] font-light tracking-wide">
-                Fenster, Türen, Rollläden, Wintergärten, Markisen und Insektenschutz —
+              <p className="text-white/70 text-sm leading-[1.9] font-light tracking-wide">
+                Fenster, Türen, Rollläden, Überdachungen, Markisen und Insektenschutz —
                 individuell geplant und professionell montiert.
               </p>
               <div className="flex flex-col gap-3">

@@ -24,7 +24,7 @@ export default function About() {
             <div className="mt-6 flex items-center gap-4">
               <div className="w-8 h-px bg-[#B8965A]" />
               <span className="text-[11px] tracking-[0.2em] uppercase text-[#B8965A] font-medium">
-                Thomas Kroll, Inhaber
+                Thomas & Andreas Kroll, Inhaber
               </span>
             </div>
           </div>
@@ -37,9 +37,9 @@ export default function About() {
 
           {/* Image with frame accent */}
           <AnimateIn from="left">
-            <div className="relative">
+            <div className="relative mb-8 sm:mb-10 lg:mb-0">
               {/* Offset border frame */}
-              <div className="absolute -top-4 -left-4 right-8 bottom-8 border border-[#B8965A]/30 hidden lg:block" />
+              <div className="absolute -top-3 -left-3 right-6 bottom-6 border border-[#B8965A]/25 hidden lg:block" />
 
               <div className="relative aspect-[4/5] max-w-md overflow-hidden">
                 <Image
@@ -54,10 +54,10 @@ export default function About() {
               </div>
 
               {/* Stat badge */}
-              <div className="absolute -bottom-6 -right-4 lg:right-4 bg-[#0F0D0A] text-white px-8 py-7">
-                <div className="font-display text-[3.5rem] font-light leading-none">30</div>
-                <div className="font-display text-[3.5rem] font-light leading-none text-[#B8965A]">+</div>
-                <div className="text-white/40 text-[10px] tracking-[0.2em] uppercase mt-2 font-medium">
+              <div className="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-4 lg:right-4 bg-[#0F0D0A] text-white px-6 sm:px-8 py-5 sm:py-7">
+                <div className="font-display text-[2.8rem] sm:text-[3.5rem] font-light leading-none">30</div>
+                <div className="font-display text-[2.8rem] sm:text-[3.5rem] font-light leading-none text-[#B8965A]">+</div>
+                <div className="text-white/55 text-[10px] tracking-[0.2em] uppercase mt-2 font-medium">
                   Jahre<br />Erfahrung
                 </div>
               </div>
@@ -83,10 +83,10 @@ export default function About() {
                 persönlichen Service.
               </p>
               <p className="text-[#6B6A68] leading-[1.9] mb-12 text-[15px] font-light">
-                Inhaber Thomas Kroll und sein Team betreuen Privat- und
-                Gewerbekunden in Berlin, Brandenburg und Niedersachsen. Jedes
-                Projekt wird individuell geplant und mit handwerklicher Sorgfalt
-                umgesetzt.
+                Die Brüder Thomas und Andreas Kroll führen das Unternehmen
+                gemeinsam und betreuen Privat- und Gewerbekunden in Berlin,
+                Brandenburg und Niedersachsen. Jedes Projekt wird individuell
+                geplant und mit handwerklicher Sorgfalt umgesetzt.
               </p>
 
               {/* Qualities list */}

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 
 const services = [
-  "Wintergarten / Terrassendach",
+  "Überdachung / Terrassendach",
   "Fenster & Türen",
   "Rollläden",
   "Markisen & Sonnenschutz",
@@ -23,11 +23,27 @@ const contactInfo = [
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+    } catch {
+      setError("Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder rufen Sie uns an.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -195,11 +211,16 @@ export default function Contact() {
                   Bearbeitung Ihrer Anfrage verwendet.
                 </p>
 
+                {error && (
+                  <p className="text-[13px] text-red-700 leading-relaxed">{error}</p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-[#0F0D0A] text-[#F4F1EC] text-[12px] font-semibold py-4 tracking-[0.12em] uppercase hover:bg-[#1A1714] transition-colors duration-300"
+                  disabled={loading}
+                  className="w-full bg-[#0F0D0A] text-[#F4F1EC] text-[12px] font-semibold py-4 tracking-[0.12em] uppercase hover:bg-[#1A1714] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Anfrage absenden
+                  {loading ? "Wird gesendet …" : "Anfrage absenden"}
                 </button>
               </form>
             </>

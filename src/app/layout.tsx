@@ -22,24 +22,24 @@ const OG_IMAGE =
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80";
 
 export const metadata: Metadata = {
-  title: "Kroll & Kroll Bauelemente GbR – Fenster, Türen & Wintergärten",
+  title: "Kroll & Kroll Bauelemente GbR – Fenster, Türen & Überdachungen",
   description:
-    "Ihr Spezialist für maßgefertigte Bauelemente in Berlin, Brandenburg und Niedersachsen. Fenster, Türen, Rollläden, Wintergärten, Markisen und Insektenschutz seit 1992.",
+    "Ihr Spezialist für maßgefertigte Bauelemente in Berlin, Brandenburg und Niedersachsen. Fenster, Türen, Rollläden, Überdachungen, Markisen und Insektenschutz seit 1992.",
   keywords:
-    "Bauelemente, Fenster, Türen, Rollläden, Wintergarten, Markisen, Insektenschutz, Berlin, Brandenburg, Stahnsdorf, Potsdam",
+    "Bauelemente, Fenster, Türen, Rollläden, Überdachung, Terrassendach, Markisen, Insektenschutz, Berlin, Brandenburg, Stahnsdorf, Potsdam",
   openGraph: {
     type: "website",
     locale: "de_DE",
     url: "https://kroll-bauelemente.de",
     siteName: "Kroll & Kroll Bauelemente",
-    title: "Kroll & Kroll Bauelemente – Fenster, Türen & Wintergärten",
+    title: "Kroll & Kroll Bauelemente – Fenster, Türen & Überdachungen",
     description:
-      "Maßgefertigte Bauelemente vom Fachmann. Fenster, Türen, Rollläden, Wintergärten und mehr – seit 1992 in Berlin, Brandenburg und Niedersachsen.",
+      "Maßgefertigte Bauelemente vom Fachmann. Fenster, Türen, Rollläden, Überdachungen und mehr – seit 1992 in Berlin, Brandenburg und Niedersachsen.",
     images: [{ url: OG_IMAGE, width: 1200, height: 800, alt: "Kroll & Kroll Bauelemente" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kroll & Kroll Bauelemente – Fenster, Türen & Wintergärten",
+    title: "Kroll & Kroll Bauelemente – Fenster, Türen & Überdachungen",
     description: "Maßgefertigte Bauelemente vom Fachmann seit 1992.",
     images: [OG_IMAGE],
   },
@@ -52,12 +52,15 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "Kroll & Kroll Bauelemente GbR",
   description:
-    "Maßgefertigte Bauelemente – Fenster, Türen, Rollläden, Wintergärten, Markisen und Insektenschutz seit 1992.",
+    "Maßgefertigte Bauelemente – Fenster, Türen, Rollläden, Überdachungen, Markisen und Insektenschutz seit 1992.",
   url: "https://kroll-bauelemente.de",
   telephone: "+493329614673",
   email: "info@kroll-bauelemente.de",
   foundingDate: "1992",
-  founder: { "@type": "Person", name: "Thomas Kroll" },
+  founder: [
+    { "@type": "Person", name: "Thomas Kroll" },
+    { "@type": "Person", name: "Andreas Kroll" },
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: "Friedenstr. 5",

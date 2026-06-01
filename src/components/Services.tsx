@@ -7,10 +7,10 @@ import AnimateIn from "@/components/AnimateIn";
 const services = [
   {
     num: "01",
-    title: "Wintergärten & Terrassendächer",
-    short: "Lichtdurchflutete Räume, die Innen und Außen verschmelzen lassen — ganzjährig nutzbar, individuell geplant.",
+    title: "Überdachungen & Terrassendächer",
+    short: "Elegante Überdachungen für Terrasse und Eingang — wetterfest, individuell geplant und ganzjährig nutzbar.",
     photo: "https://images.unsplash.com/photo-1767370568478-bd673ae87300?auto=format&fit=crop&w=800&q=80",
-    alt: "Sonnendurchfluteter Wintergarten",
+    alt: "Moderne Terrassenüberdachung",
   },
   {
     num: "02",
@@ -82,12 +82,12 @@ export default function Services() {
             <AnimateIn key={s.num} delay={(i % 3) as 0 | 1 | 2}>
               <a
                 href="#kontakt"
-                className="service-row group flex items-center gap-6 lg:gap-10 py-7 border-b border-[#DDD8CF] hover:pl-5 transition-all duration-500 cursor-pointer"
+                className="service-row group flex items-center gap-4 lg:gap-10 py-5 sm:py-6 border-b border-[#DDD8CF] sm:hover:pl-5 transition-all duration-500 cursor-pointer"
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
               >
                 {/* Number */}
-                <span className="font-display text-[2.2rem] lg:text-[3rem] font-light text-[#DDD8CF] group-hover:text-[#B8965A] transition-colors duration-500 leading-none flex-shrink-0 w-14 lg:w-20 text-right">
+                <span className="font-display text-[1.6rem] lg:text-[3rem] font-light text-[#C8C3B8] group-hover:text-[#B8965A] transition-colors duration-500 leading-none flex-shrink-0 w-10 lg:w-20 text-right">
                   {s.num}
                 </span>
 
@@ -96,7 +96,7 @@ export default function Services() {
 
                 {/* Title + description */}
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-display text-[1.35rem] lg:text-[1.65rem] font-medium text-[#0F0D0A] leading-tight tracking-[-0.01em] mb-1.5">
+                  <h3 className="font-display text-[1.15rem] sm:text-[1.35rem] lg:text-[1.65rem] font-medium text-[#0F0D0A] leading-tight tracking-[-0.01em] mb-1">
                     {s.title}
                   </h3>
                   <p className="text-[#9A9590] text-[13px] leading-relaxed font-light hidden sm:block max-w-lg">

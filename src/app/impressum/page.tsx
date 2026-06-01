@@ -59,7 +59,7 @@ export default function Impressum() {
             <p>
               <strong className="text-[#0F0D0A] font-medium">Kroll &amp; Kroll Bauelemente GbR</strong>
               <br />
-              Inhaber: Thomas Kroll
+              Inhaber: Thomas Kroll & Andreas Kroll
               <br />
               Friedenstr. 5<br />
               14532 Stahnsdorf
@@ -84,7 +84,7 @@ export default function Impressum() {
 
           <Section title="Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV">
             <p>
-              Thomas Kroll
+              Thomas Kroll & Andreas Kroll
               <br />
               Friedenstr. 5<br />
               14532 Stahnsdorf

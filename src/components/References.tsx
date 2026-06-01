@@ -7,11 +7,11 @@ import AnimateIn from "@/components/AnimateIn";
 
 const projects = [
   {
-    title: "Wintergarten in Potsdam",
-    category: "Wintergarten",
+    title: "Terrassenüberdachung in Potsdam",
+    category: "Überdachung",
     photo: "https://images.unsplash.com/photo-1767370568478-bd673ae87300?auto=format&fit=crop&w=800&q=80",
     photoFull: "https://images.unsplash.com/photo-1767370568478-bd673ae87300?auto=format&fit=crop&w=1600&q=85",
-    alt: "Sonnendurchfluteter Wintergarten",
+    alt: "Elegante Terrassenüberdachung",
     span: "col",
   },
   {
@@ -47,11 +47,11 @@ const projects = [
     span: "",
   },
   {
-    title: "Neubau Kleinmachnow",
-    category: "Komplettsanierung",
+    title: "Fenstersanierung Kleinmachnow",
+    category: "Fenster",
     photo: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
     photoFull: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85",
-    alt: "Modernes Einfamilienhaus",
+    alt: "Einfamilienhaus mit neuen Fenstern",
     span: "col",
   },
 ];
