@@ -9,17 +9,17 @@ const projects = [
   {
     title: "Terrassenüberdachung in Potsdam",
     category: "Überdachung",
-    photo: "https://images.unsplash.com/photo-1767370568478-bd673ae87300?auto=format&fit=crop&w=800&q=80",
-    photoFull: "https://images.unsplash.com/photo-1767370568478-bd673ae87300?auto=format&fit=crop&w=1600&q=85",
-    alt: "Elegante Terrassenüberdachung",
+    photo: "https://images.unsplash.com/photo-1696846912293-9a8013e17403?auto=format&fit=crop&w=800&q=80",
+    photoFull: "https://images.unsplash.com/photo-1696846912293-9a8013e17403?auto=format&fit=crop&w=1600&q=85",
+    alt: "Moderne Terrassenüberdachung mit Sitzbereich",
     span: "col",
   },
   {
     title: "Fensterfront Berlin-Zehlendorf",
     category: "Fenster",
-    photo: "https://images.unsplash.com/photo-1538903723116-763313165283?auto=format&fit=crop&w=800&q=80",
-    photoFull: "https://images.unsplash.com/photo-1538903723116-763313165283?auto=format&fit=crop&w=1600&q=85",
-    alt: "Weiße Holzfenster",
+    photo: "https://images.unsplash.com/photo-1775116483675-a592e6e02807?auto=format&fit=crop&w=800&q=80",
+    photoFull: "https://images.unsplash.com/photo-1775116483675-a592e6e02807?auto=format&fit=crop&w=1600&q=85",
+    alt: "Zeitgenössisches Wohnhaus mit großer Glasfront",
     span: "",
   },
   {
@@ -33,9 +33,9 @@ const projects = [
   {
     title: "Terrassendach Stahnsdorf",
     category: "Terrassendach",
-    photo: "https://images.unsplash.com/photo-1730102816323-3e60cef43702?auto=format&fit=crop&w=800&q=80",
-    photoFull: "https://images.unsplash.com/photo-1730102816323-3e60cef43702?auto=format&fit=crop&w=1600&q=85",
-    alt: "Überdachte Pergola-Terrasse",
+    photo: "https://images.unsplash.com/photo-1696321061861-f549e8765e67?auto=format&fit=crop&w=800&q=80",
+    photoFull: "https://images.unsplash.com/photo-1696321061861-f549e8765e67?auto=format&fit=crop&w=1600&q=85",
+    alt: "Überdachter Pergola-Bereich am Wohnhaus",
     span: "",
   },
   {
@@ -49,9 +49,9 @@ const projects = [
   {
     title: "Fenstersanierung Kleinmachnow",
     category: "Fenster",
-    photo: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-    photoFull: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85",
-    alt: "Einfamilienhaus mit neuen Fenstern",
+    photo: "https://images.unsplash.com/photo-1612296350203-7d4718f6ac65?auto=format&fit=crop&w=800&q=80",
+    photoFull: "https://images.unsplash.com/photo-1612296350203-7d4718f6ac65?auto=format&fit=crop&w=1600&q=85",
+    alt: "Klassisches Einfamilienhaus nach Fenstersanierung",
     span: "col",
   },
 ];

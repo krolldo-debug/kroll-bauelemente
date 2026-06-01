@@ -129,12 +129,12 @@ export default function Logos() {
             {partners.map((p) => (
               <div
                 key={p.name}
-                className="group flex flex-col items-center justify-center gap-2.5 py-6 px-4 bg-white border border-[#DDD8CF] hover:border-[#B8965A]/40 hover:shadow-sm transition-all duration-300"
+                className="group flex flex-col items-center justify-center gap-2 py-5 px-2 sm:px-4 bg-white border border-[#DDD8CF] hover:border-[#B8965A]/40 hover:shadow-sm transition-all duration-300"
               >
                 <div className="flex items-center justify-center h-9">
                   {p.logo}
                 </div>
-                <span className="text-[9px] text-[#9A9590] uppercase tracking-[0.18em] text-center font-medium leading-tight">
+                <span className="text-[7.5px] sm:text-[9px] text-[#9A9590] uppercase tracking-[0.12em] sm:tracking-[0.18em] text-center font-medium leading-tight break-words w-full">
                   {p.sub}
                 </span>
               </div>

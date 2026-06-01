@@ -1,10 +1,21 @@
 import AnimateIn from "@/components/AnimateIn";
 
-const stats = [
-  { value: "30", suffix: "+", label: "Jahre\nErfahrung" },
-  { value: "500", suffix: "+", label: "Zufriedene\nKunden" },
-  { value: "3", suffix: "", label: "Bundes-\nländer" },
-  { value: "∞", suffix: "", label: "Persönlicher\nService" },
+const facts = [
+  {
+    value: "1992",
+    title: "Familienbetrieb seit Gründung",
+    desc: "Drei Jahrzehnte Handwerk in Berlin, Brandenburg und Niedersachsen — gewachsen durch Empfehlungen, nicht durch Werbung.",
+  },
+  {
+    value: "T & A",
+    title: "Thomas & Andreas Kroll",
+    desc: "Zwei Brüder, ein Betrieb. Persönlich erreichbar, direkt verantwortlich — kein Callcenter, keine anonyme Hotline.",
+  },
+  {
+    value: "FK",
+    title: "Zertifizierter Fachbetrieb",
+    desc: "Autorisierter Partner von Schüco, REHAU, VEKA und Neher — ausschließlich Markenprodukte mit langer Lebensdauer.",
+  },
 ];
 
 const reasons = [
@@ -38,25 +49,21 @@ export default function WhyUs() {
   return (
     <section className="bg-[#0F0D0A] overflow-hidden">
 
-      {/* Stats — architectural display */}
+      {/* Facts — editorial 3-column */}
       <AnimateIn>
         <div className="border-b border-white/[0.1]">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/[0.1]">
-            {stats.map((s) => (
-              <div key={s.label} className="px-6 sm:px-8 lg:px-10 py-10 lg:py-20">
-                <div className="font-display leading-none mb-3 flex items-start">
-                  <span className="text-[3.2rem] sm:text-[4.5rem] lg:text-[7rem] font-light text-white/95 leading-none">
-                    {s.value}
-                  </span>
-                  {s.suffix && (
-                    <span className="text-[1.6rem] sm:text-[2.5rem] lg:text-[4rem] font-light text-[#B8965A] leading-none mt-1">
-                      {s.suffix}
-                    </span>
-                  )}
+          <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-white/[0.1]">
+            {facts.map((f) => (
+              <div key={f.title} className="px-8 lg:px-12 py-12 lg:py-16">
+                <div className="font-display text-[2.8rem] lg:text-[3.8rem] font-light text-[#B8965A] leading-none mb-4 tracking-[-0.01em]">
+                  {f.value}
                 </div>
-                <div className="text-white/50 text-[10px] tracking-[0.2em] uppercase font-medium whitespace-pre-line leading-[1.6]">
-                  {s.label}
+                <div className="text-white font-medium text-[13px] tracking-[0.06em] uppercase mb-3">
+                  {f.title}
                 </div>
+                <p className="text-white/50 text-[13px] leading-[1.85] font-light max-w-xs">
+                  {f.desc}
+                </p>
               </div>
             ))}
           </div>

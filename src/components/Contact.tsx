@@ -25,6 +25,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [privacy, setPrivacy] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", message: "" });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -206,9 +207,28 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* DSGVO Checkbox */}
+                <div className="flex items-start gap-3">
+                  <input
+                    id="privacy"
+                    type="checkbox"
+                    required
+                    checked={privacy}
+                    onChange={(e) => setPrivacy(e.target.checked)}
+                    className="mt-0.5 flex-shrink-0 w-4 h-4 accent-[#B8965A] cursor-pointer"
+                  />
+                  <label htmlFor="privacy" className="text-[12px] text-[#7A7670] leading-relaxed cursor-pointer">
+                    Ich habe die{" "}
+                    <a href="/datenschutz" className="text-[#0F0D0A] underline underline-offset-2 hover:text-[#B8965A] transition-colors">
+                      Datenschutzerklärung
+                    </a>{" "}
+                    gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. *
+                  </label>
+                </div>
+
                 <p className="text-[11px] text-[#9A9590] leading-relaxed">
                   * Pflichtfelder. Ihre Daten werden ausschließlich zur
-                  Bearbeitung Ihrer Anfrage verwendet.
+                  Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.
                 </p>
 
                 {error && (
@@ -217,7 +237,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={loading}
+                  disabled={loading || !privacy}
                   className="w-full bg-[#0F0D0A] text-[#F4F1EC] text-[12px] font-semibold py-4 tracking-[0.12em] uppercase hover:bg-[#1A1714] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? "Wird gesendet …" : "Anfrage absenden"}
